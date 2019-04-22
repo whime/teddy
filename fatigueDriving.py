@@ -13,7 +13,7 @@ def fatigueDriving(df):
 	day=datetime.datetime.strptime(df.loc[0]['location_time'],'%Y-%m-%d %H:%M:%S').day	#当前日期
 
 	drive=False
-	setOffTime=0
+	setOffTime=datetime.datetime.strptime(df.loc[0]['location_time'],'%Y-%m-%d %H:%M:%S')
 	startRestTime=0	#开始休息的时间
 	restTime=0
 	rest=False
@@ -27,6 +27,7 @@ def fatigueDriving(df):
 		if curTime.day!=day or (timeInterval>1200 and drive) or i==(rows-1):
 			#日期变化或者出现相邻两条数据之间时间间隔大于20分钟，需要结束前面的统计
 			day=curTime.day
+
 			if (lastTime-setOffTime).total_seconds()>14400:
 				# print('4 hours')
 				fatigueDriveCount+=1
@@ -67,6 +68,6 @@ def fatigueDriving(df):
 	# print('%.2f	%d'%(sumDriveTime,sumDriveCount))
 	return [sumDriveTimeInHours,sumDriveCount]
 if __name__ == '__main__':
-	file='C:/Users/ASUS/Downloads/泰迪杯/Combine/AF00373'+'.csv'
+	file='C:/Users/ASUS/Downloads/泰迪杯/Combine/Road3'+'.csv'
 	df=pd.read_csv(file)
 	fatigueDriving(df)
