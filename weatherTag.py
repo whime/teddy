@@ -14,27 +14,27 @@ def splitWeatherTag(df):
 			tmpTag=conditions.strip().split('转')
 			# result.extend(conditions.strip().split('转'))
 			for tag in tmpTag:
-				if '夹' in tag:
-					result.extend(tag.strip().split('夹'))
-					continue
+				# if '夹' in tag:
+				# 	result.extend(tag.strip().split('夹'))
+				# 	continue
 				if '-' in tag:
 					result.extend(tag.strip().split('-'))
 					continue
 				result.append(tag)
 			continue
-		if '夹' in conditions:
-			# print(conditions.strip().split('夹'))
-			tmpTag=conditions.strip().split('夹')
-			# result.extend(conditions.strip().split('夹'))
-			for tag in tmpTag:
-				if '转' in tag:
-					result.extend(tag.strip().split('转'))
-					continue
-				if '-' in tag:
-					result.extend(tag.strip().split('-'))
-					continue
-				result.append(tag)	#使用extend会将一个词语拆成单个汉字再加入列表
-			continue
+		# if '夹' in conditions:
+		# 	# print(conditions.strip().split('夹'))
+		# 	tmpTag=conditions.strip().split('夹')
+		# 	# result.extend(conditions.strip().split('夹'))
+		# 	for tag in tmpTag:
+		# 		if '转' in tag:
+		# 			result.extend(tag.strip().split('转'))
+		# 			continue
+		# 		if '-' in tag:
+		# 			result.extend(tag.strip().split('-'))
+		# 			continue
+		# 		result.append(tag)	#使用extend会将一个词语拆成单个汉字再加入列表
+		# 	continue
 		if '-' in conditions:
 			# print(conditions.strip().split('转'))
 			tmpTag=conditions.strip().split('-')
@@ -42,9 +42,9 @@ def splitWeatherTag(df):
 				if '转' in tag:
 					result.extend(tag.strip().split('转'))
 					continue
-				if '夹' in tag:
-					result.extend(tag.strip().split('夹'))
-					continue
+				# if '夹' in tag:
+				# 	result.extend(tag.strip().split('夹'))
+				# 	continue
 				result.append(tag)
 			continue
 		# print(conditions)
