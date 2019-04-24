@@ -77,7 +77,8 @@ def getWeatherConditionByCoordinateAndDate(df,weatherDict):
 	# print("经度",lng)
 	# print("纬度",lat)
 	#使用转换后的经纬度查询省市区
-	url = 'http://api.map.baidu.com/geocoder/v2/?location='+str(lat)+','+str(lng)+ '&output=json&pois=1&ak=omccBE0lR4imoVYekaRdNsSW9NiiMief'
+	#api文档
+	url = 'http://api.map.baidu.com/geocoder/v2/?location='+str(lat)+','+str(lng)+ '&output=json&pois=1&latest_admin=1&ak=omccBE0lR4imoVYekaRdNsSW9NiiMief'
 	req = urllib.request.urlopen(url)  # json格式的返回数据
 	res = req.read().decode("utf-8")  # 将其他编码的字符串解码成unicode
 	resultJson=json.loads(res).get('result')
