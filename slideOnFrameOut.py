@@ -14,6 +14,7 @@ def SlideOnFrameOut(df):
 
 	for i in range(0,rows):
 		item=df.iloc[i]
+
 		acc_state=item[5]
 		gps_speed=item[11]
 

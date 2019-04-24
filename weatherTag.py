@@ -50,7 +50,7 @@ def splitWeatherTag(df):
 		# print(conditions)
 		result.append(conditions)
 	result=set(result)
-	print(result)
+	return  result
 
 
 if __name__ == '__main__':
