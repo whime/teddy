@@ -32,8 +32,8 @@ def SlideOnFrameOut(df):
 			endlat=item[4]
 			endlng=item[3]
 			isSlide=False
-			#行驶里程大于0，并且经纬度有变化，时间间隔大于3s
-			if timeInterval>=0 and (startlng!=endlng or startlat!=endlat) :
+			#滑行时长大于等于3，并且经纬度有变化
+			if timeInterval>=3 and (startlng!=endlng or startlat!=endlat) :
 				sumTime+=timeInterval
 				slideCount+=1
 	# print(sumTime)
@@ -41,6 +41,6 @@ def SlideOnFrameOut(df):
 	return [sumTime,slideCount]
 if __name__ == '__main__':
 	for i in range(1,17):
-		file="C:/Users/ASUS/Downloads/Roads/AA00004/AA00004/Road"+str(i)+".csv"
+		file="C:/Users/ASUS/Downloads/泰迪杯/Roads/AA00004/AA00004/Road"+str(i)+".csv"
 		df=pandas.read_csv(file)
 		SlideOnFrameOut(df)

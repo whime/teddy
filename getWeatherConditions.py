@@ -98,7 +98,7 @@ def getWeatherConditionByCoordinateAndDate(df,weatherDict):
 		return splitWeatherTag(weatherDict[tmpKey])
 	#找不到对应地点的天气情况，返回字符串集合'未知'
 	# print("未知")
-	return set('未知')
+	return ['未知']
 
 if __name__ == '__main__':
 	# file=os.getcwd()+"/Data/AA00002/Road1.csv"

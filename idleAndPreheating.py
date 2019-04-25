@@ -28,7 +28,7 @@ def idle_preheatint(df):
 				if timeInterval>60:
 					# print("end")
 					# print(startIdlePreheatTime)
-					# print(endIdlePreheatTime)
+					# pdrint(endIdlePreheatTime)
 					# print(timeInterval)
 					timeSum+=timeInterval
 					count+=1

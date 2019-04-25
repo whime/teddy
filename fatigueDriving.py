@@ -15,7 +15,7 @@ def fatigueDriving(df):
 	drive=False
 	setOffTime=datetime.datetime.strptime(df.loc[0]['location_time'],'%Y-%m-%d %H:%M:%S')
 	startRestTime=0	#开始休息的时间
-	restTime=0
+
 	rest=False
 	for i in range(1,rows):
 		item=df.iloc[i]
@@ -33,7 +33,7 @@ def fatigueDriving(df):
 				fatigueDriveCount+=1
 				sumDriveTime+=(lastTime-setOffTime).total_seconds()
 			if fatigueDriveCount<=1 and fatigueDriveTime>28800:
-				#单次连续驾驶行为小于2并且当日驾驶时长大于8小时，则fatigueDriveCount加1
+				#单次连续驾驶行为小于4并且当日驾驶时长大于8小时，则fatigueDriveCount加1
 				fatigueDriveCount+=1
 				# print('addition')
 				if fatigueDriveCount==1:
